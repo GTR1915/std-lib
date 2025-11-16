@@ -1,0 +1,28 @@
+arr = [1,0,1,1,1,1,0,3,0,0,1,0,2,1,1,1,0,2,0,1,1,2,0,1,1]
+
+def streak_list(iterator: list, target) -> list:
+    dummy = []
+    streak = 0
+    for element in iterator:
+        if element == target:
+            streak += 1
+        else:
+            streak = 0
+        dummy.append(streak)
+    return dummy
+
+
+def max_streak(iterator: list, target) -> int:
+    streak = maxstreak= 0
+    for element in iterator:
+        if element == target:
+            streak += 1
+            if streak > maxstreak:
+                maxstreak =streak
+        else:
+            streak = 0
+    return maxstreak
+
+
+print(streak_list(arr, 1))
+print(max_streak(arr, 1))
